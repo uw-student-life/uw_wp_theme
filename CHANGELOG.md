@@ -1,6 +1,10 @@
 # Changelog
 
-## 2025-08-14
+## 2025-08-19 3.6.2
+
+- Bugfix for Call to Action output
+
+## 2025-08-13 3.6.1
 
 - Minor tweaks to Call to Action output
 

@@ -117,5 +117,7 @@ class UW_Call_To_Action {
 			</div><!-- .container -->
 		</div><!-- .call-to-action -->
 		<?php
+		// return the shortcode output.
+		return ob_get_clean();
 	}
 }
