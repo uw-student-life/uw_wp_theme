@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-09-10 3.6.3
+
+- Various PHP warning fixes
+
 ## 2025-08-19 3.6.2
 
 - Bugfix for Call to Action output

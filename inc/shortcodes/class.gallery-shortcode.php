@@ -244,7 +244,7 @@ class UW_Gallery {
 			array(
 				'order'      => 'ASC',
 				'orderby'    => 'menu_order ID',
-				'id'         => $post->ID,
+				'id'         => ! empty( $post->ID ) ? $post->ID : 0,
 				'itemtag'    => '',
 				'icontag'    => '',
 				'captiontag' => '',
