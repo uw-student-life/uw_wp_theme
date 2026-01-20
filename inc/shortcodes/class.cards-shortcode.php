@@ -349,6 +349,12 @@ class UW_Card {
 			$output .= '</div>';
 		}
 
+		// if shortcode is empty and there's no output, return nothing.
+		if (empty( $output )) {
+			return;
+		}
+
+		// return the output
 		if ( 'full-width' !== strtolower( $style ) ) {
 			echo apply_filters( 'the_content', $output );
 		} else {

@@ -462,9 +462,20 @@ if ( !function_exists( 'uw_meta_tags' ) ) :
 				echo '<meta property="og:image" content="' . $og_img . '" />' . PHP_EOL;
 			}
 			elseif ( $has_post_thumbnail ) {
-				$thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
+				// check if the thumbnail has a large size.
+				if ( has_image_size( 'large' ) ) {
+					$thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
+					$thumbnail_url = $thumbnail_src[0];
+				} elseif ( has_image_size( 'full' ) ) {
+					// if not, check if it has a full size.
+					$thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+					$thumbnail_url = $thumbnail_src[0];
+				} else {
+					// if that isn't available either, use the default image.
+					$thumbnail_url = 'https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/10/2019/06/21094817/Univ-of-Washington_Memorial-Way.jpg';
+				}
 
-				echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '" />' . PHP_EOL;
+				echo '<meta property="og:image" content="' . esc_attr( $thumbnail_url ) . '" />' . PHP_EOL;
 
 			}
 			else {

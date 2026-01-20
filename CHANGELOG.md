@@ -1,5 +1,21 @@
 # Changelog
 
+## 2025-09-10 3.6.3
+
+- Various PHP warning fixes
+
+## 2025-08-19 3.6.2
+
+- Bugfix for Call to Action output
+
+## 2025-08-13 3.6.1
+
+- Minor tweaks to Call to Action output
+
+## 2025-08-12 3.6
+
+- Added new Call to Action module & shortcode with 2 types and 3 variations
+
 ## 2025-04-03 3.5
 
 - Updated URLs to reduce redirects
