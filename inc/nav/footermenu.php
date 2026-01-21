@@ -65,7 +65,7 @@ class UW_FooterMenu {
 
 		// The default footer menu.
 		$this->add_menu_item( 'Accessibility', 'https://www.washington.edu/accessibility/' );
-		$this->add_menu_item( 'Contact Us', 'https://www.washington.edu/contact/' );
+		$this->add_menu_item( 'Contact UW', 'https://www.washington.edu/contact/' );
 		$this->add_menu_item( 'Jobs', 'https://www.washington.edu/jobs/' );
 		$this->add_menu_item( 'Campus Safety', 'https://www.washington.edu/safety/' );
 		$this->add_menu_item( 'My UW', 'https://my.uw.edu/' );
