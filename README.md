@@ -1,9 +1,7 @@
 # UW WordPress Theme
-![UW WordPress Theme version 3.6.1](https://img.shields.io/static/v1?label=version&message=v3.6.1&color=green)
+![UW WordPress Theme version 3.8.3](https://img.shields.io/static/v1?label=version&message=v3.8.3&color=green)
 
 Please visit the [theme Wiki pages](https://github.com/uweb/uw_wp_theme/wiki) for more information on changes from the uw-2014 theme, Bootstrap features, child themes, and developer documentation.
-
-You can also follow along on our progress and learn more about our [development roadmap](https://github.com/uweb/uw_wp_theme/projects/1) and [backlog](https://github.com/uweb/uw_wp_theme/projects/2).
 
 ## Requirements
 * [PHP](https://php.net/) 7.4 or higher, 8.2.x recommended
@@ -13,13 +11,16 @@ You can also follow along on our progress and learn more about our [development 
 
 The UW WordPress Theme theme includes the following features.
 
-* [Bootstrap 4](https://getbootstrap.com/) integration
+* [Bootstrap 4.6](https://getbootstrap.com/docs/4.6/) integration
 * UW brand styled shortcodes and components
 * Mobile-first
 * Progressive enhancement
 * Modern styling and layouts using grid and flexbox
 * Modern JavaScript
+* Hybrid theme with block editor support and UW brand styled options
 * Starter child theme
+
+For additional information about the theme, including working examples, please visit the [Web Strategy Documentation Library](https://www.washington.edu/docs/).
 
 ## For Developers
 
@@ -211,9 +212,10 @@ This accordion shortcode uses the [Bootstrap collapse](https://getbootstrap.com/
 
 Attributes:
 
-* **style**: Set the accordion titles to uppercase or non-bold. Options: **uppercase-title**, **non-bold** (_Default: none_)
+* **style**: Set the accordion titles to uppercase or non-bold, or changes the font to Open Sans. Options: **uppercase-title**, **non-bold**, **open-sans**  (_Default: none_)
 * **name**: Set the name for the accordion.
 * **id**: Specify an ID to use for the accordion. _Make sure to start your ID with a letter (no numbers or special characters). Default: auto-generated on accordion, none on section_
+* **titletag**: Set the title tag for each section of the accordion. Options: h2, h3, h4. (_Default: h3_)
 
 _Note 1:_ the accordion name will not show up on the page. However, it is important to include a name, as it is used to generate the unique ID of the accordion. The name will also be read by screen-reader assistive technology. If you want a name (title) of an accordion, add text above the accordion shortcode.
 
@@ -222,7 +224,7 @@ _Note 2:_ If an **id** is set on accordion, this will override the name or gener
 Example:
 
 ```
-[accordion name="Accessible Accordion" id=""]
+[accordion name="Accessible Accordion" id="" titletag=""]
     [section title="Example" id=""] Section[/section]
     [section title="Example" id=""] Section[/section]
     [section title="Example" id=""] Section[/section]
@@ -254,6 +256,11 @@ Attributes:
 
 ```
 [blockquote style="" align="" name="Dubs Husky" title="Official Live Mascot" ] blockquote text [/blockquote]
+```
+ **----- OR -----**
+ (either format is acceptable)
+```
+[quote style="" align="" name="Dubs Husky" title="Official Live Mascot" ] blockquote text [/quote]
 ```
 
 ### Blogroll ###
@@ -294,10 +301,11 @@ Attributes:
 * **color**:  The color of the button. Options: white, purple, light-gold, gold. (_Default: none_)
 * **target**:  The URL for the link or download that you want to direct the user to on click. (_Default: none_)
 * **id**: Specify an ID to use for the button. _Make sure to start your ID with a letter (no numbers or special characters)._
+* **textalign**: Set alignment of button text to left. (_Default: center_)
 
 Example:
 ```
-[uw_button style="arrow" size="large" color="gold" target="#"](button copy)[/uw_button]
+[uw_button textalign='left' style="arrow" size="large" color="gold" target="#"](button copy)[/uw_button]
 ```
 
 ### Call to Action
